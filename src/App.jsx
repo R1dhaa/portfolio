@@ -6,10 +6,18 @@ import Contact from "./components/contact/Contact";
 const App = () => {
   return (
     <div className="container">
+      <section id="#home">
       <Hero />
+      </section>
+      <section id="#services">
       <Services />
-      <Portfolio />
+      </section>
+      <section id="#portfolio">
+        <Portfolio />
+      </section>
+      <section id="#contact">
       <Contact />
+      </section>
     </div>
   )
 }
