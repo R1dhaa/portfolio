@@ -5,4 +5,4 @@ const Contact = () => {
     )
   }
   
-  export default App
+  export default Contact

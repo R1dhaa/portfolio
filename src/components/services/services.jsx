@@ -5,4 +5,4 @@ const Services = () => {
     )
   }
   
-  export default App
+  export default Services

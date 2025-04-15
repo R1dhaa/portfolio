@@ -5,4 +5,4 @@ const Hero = () => {
     )
   }
   
-  export default App
+  export default Hero

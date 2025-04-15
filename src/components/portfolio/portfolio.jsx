@@ -5,4 +5,4 @@ const Portfolio = () => {
     )
   }
   
-  export default App
+  export default Portfolio

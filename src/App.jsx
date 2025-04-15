@@ -5,11 +5,11 @@ import Contact from "./components/contact/Contact";
 
 const App = () => {
   return (
-    <div className=''>
-      <Hero/>
-      <Services/>
-      <Portfolio/>
-      <Contact/>
+    <div className="">
+      <Hero />
+      <Services />
+      <Portfolio />
+      <Contact />
     </div>
   )
 }
