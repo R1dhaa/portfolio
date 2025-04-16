@@ -57,7 +57,8 @@ const Hero = () => {
         <a href="/#contact" className="contactLink">
         <div className="contactButton">
         
-        <svg viewBox="0 0 200 200" width="150" height="150">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+
     {/* Center filled circle */}
     <circle cx="100" cy="100" r="70" fill="gold" stroke="none" />
 

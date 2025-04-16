@@ -1,45 +1,32 @@
 .hero {
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
     display: flex;
+    position: relative;
+    overflow: hidden;
   }
   
-  .bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  
-  .hImg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: 80%;
-    width: max-content;
-  }
-  
-  .hImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+  /* Left and Right Sections */
   .hSection {
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 40px;
   }
   
+  .hSection.left {
+    align-items: flex-start;
+  }
+  
+  .hSection.right {
+    align-items: flex-end;
+    
+  }
+  
+  /* Title Styling */
   .hTitle {
-    margin-top: 50px;
-    font-size: 100px;
+    font-size: 72px;
     color: pink;
   }
   
@@ -47,19 +34,13 @@
     color: white;
   }
   
-
-  
-
-  
+  /* Scroll Icon */
   .scroll {
     margin-bottom: 50px;
     width: max-content;
   }
   
-  .hSection.right {
-    align-items: end;
-  }
-  
+  /* Follow Icons - now top right */
   .follow {
     display: flex;
     flex-direction: column;
@@ -70,8 +51,8 @@
   }
   
   .follow img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
   
   .followTextContainer {
@@ -92,134 +73,80 @@
     align-items: center;
     border-bottom-right-radius: 10px;
   }
-  
-  .bubbleContainer {
+ 
+.bubbleContainer {
     width: 50%;
-    display: flex;
-    align-items: end;
-    gap: 8px;
-    justify-content: space-between;
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  justify-content: space-between;
   }
   
+  /* Static bubble */
   .bubble {
     width: 100%;
-    height: 100px;
-    background-color: white;
-    color: #555;
-    padding: 24px;
-    font-size: 18px;
-    border-radius: 20px 20px 0px 20px;
+  height: 100px;
+  background-color: white;
+  color: #555;
+  padding: 24px;
+  font-size: 18px;
+  border-radius: 20px 20px 0px 20px;
   }
   
+  /* Avatar next to the bubble */
   .bubbleContainer img {
     width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    object-fit: cover;
-    background-color: #dd4c62;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+  background-color: #dd4c62;
   }
   
-
+ 
   
-  .certificate img {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .contactLink {
-    margin-bottom: 50px;
-  }
-  
-  .contactButton {
-    position: relative;
-  }
-  
-  .circleText {
-    letter-spacing: 3px;
-    font-size: 20px;
-  }
-  
-  .arrow {
+  /* Animated text inside bubble */
+  .bubbleText {
+    animation: scrollText 5s linear infinite;
+    white-space: nowrap;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    will-change: transform;
   }
   
-  @media (max-width: 1536px) {
-    .hTitle {
-      font-size: 72px;
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
   
-  @media (max-width: 1280px) {
-    .bg {
-      height: 60%;
-      top: auto;
-      bottom: 0;
-    }
   
-    .hImg {
-      height: 100%;
-    }
+  /* Sun Contact Button - bottom right */
+  .contactLink {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  }
   
-    .hTitle {
-      font-size: 88px;
-    }
-  
+  .contactButton svg {
     
-  
-    .bubbleContainer {
-      width: 100%;
-    }
   }
-  
-  @media (max-width: 1024px) {
-    .bg {
-      height: 50%;
-    }
-  
-    .hTitle {
-      font-size: 72px;
-    }
-  }
-  
+  /* Responsive Adjustments */
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
     }
   
-    .bg {
-      height: 60%;
-    }
-  
     .hSection {
       width: 100%;
-    }
-  
-    .hSection.left {
       align-items: center;
       text-align: center;
-      gap: 36px;
     }
   
-    .hTitle {
-      font-size: 48px;
-    }  
-    .hSection.right {
-      justify-content: end;
-    }
-  
-    .follow,
-    .bubbleContainer
-    {
-      display: none;
+    .bubbleContainer {
+      justify-content: center;
     }
   }
+  
